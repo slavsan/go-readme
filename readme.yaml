@@ -1,0 +1,43 @@
+readme:
+  items:
+    - name: title
+      enabled: true
+    - name: description
+      enabled: true
+    - name: license
+      enabled: false
+    - name: author
+      enabled: true
+    - name: setup
+      enabled: true
+  title:
+  description:
+  badges:
+  screenshots:
+  project_status:
+  prerequisites:
+  getting_started:
+  install:
+  setup:
+    deps:
+    clone:
+    build:
+    start:
+    dev:
+    testing:
+    coverage:
+    static_analysis:
+    swagger:
+    deploy:
+  usage:
+  examples:
+  versioning:
+  changelog:
+  contributing:
+  contributors:
+  changelog:
+  releases:
+  contact:
+  author:
+  license:
+  acknowledgements:
