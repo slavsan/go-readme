@@ -10,26 +10,47 @@ readme:
       enabled: true
     - name: setup
       enabled: true
-  title:
-  description:
+  title: go-readme
+  description: A cli utility for creating project READMEs
   badges:
   screenshots:
   project_status:
   prerequisites:
   getting_started:
   install:
+  usage: |
+    In order to generate a README.md file from a readme.yaml, run
+    ```
+    go-readme create
+    ```
   setup:
+    clone: |
+      ```
+      git clone git@github.com:slavsan/go-readme.git
+      ```
     deps:
-    clone:
-    build:
-    start:
     dev:
-    testing:
+    build: |
+      ```
+      go build main.go
+      ```
+    start: |
+      ```
+      go run main.go
+      ```
+    testing: |
+      ```
+      godog
+      ```
+    linting: |
+      ```
+      golangci-lint run
+      ```
     coverage:
     static_analysis:
     swagger:
     deploy:
-  usage:
+    release:
   examples:
   versioning:
   changelog:
@@ -38,6 +59,6 @@ readme:
   changelog:
   releases:
   contact:
-  author:
-  license:
+  author: Slavcho Slavchev
+  license: MIT
   acknowledgements:
