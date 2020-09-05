@@ -83,15 +83,15 @@ func (d *doc) ToMarkdown() string {
 	}
 
 	if d.Readme.Prerequisites != "" {
-		buf.WriteString(fmt.Sprintf("\n### Prerequisites\n%s", d.Readme.Prerequisites))
+		buf.WriteString(fmt.Sprintf("### Prerequisites\n%s\n", d.Readme.Prerequisites))
 	}
 
 	if d.Readme.License != "" {
-		buf.WriteString(fmt.Sprintf("\n### License\n%s", d.Readme.License))
+		buf.WriteString(fmt.Sprintf("### License\n%s\n", d.Readme.License))
 	}
 
 	if d.Readme.Author != "" {
-		buf.WriteString(fmt.Sprintf("\n### Author\n%s", d.Readme.Author))
+		buf.WriteString(fmt.Sprintf("\n### Author\n%s\n", d.Readme.Author))
 	}
 
 	start := 0

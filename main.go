@@ -1,6 +1,6 @@
 package main
 
-import "fmt"
+import "github.com/slavsan/go-readme/cmd"
 
 // TODO: - [ ] generate (example/empty) readme.yaml
 // TODO: - [ ] generate README.md from readme.yaml
@@ -9,5 +9,5 @@ import "fmt"
 // TODO: - [ ] specify order of items
 
 func main() {
-	fmt.Printf("main here ...\n")
+	cmd.Execute()
 }
