@@ -214,3 +214,39 @@ Feature: Generate markdown readme
     golangci-lint run
     ```
     """
+
+  Scenario: Generates title, description and setup
+    Given a readme.yaml with contents
+    """
+    readme:
+      title: My project title
+      description: Some short description about the project
+      setup:
+        testing: |
+          ```
+          godog
+          ```
+        linting: |
+          ```
+          golangci-lint run
+          ```
+    """
+    When I parse the file
+    Then the following README.md will be generated
+    """
+    # My project title
+
+    Some short description about the project
+
+    ### Setup
+
+    #### Testing
+    ```
+    godog
+    ```
+
+    #### Linting
+    ```
+    golangci-lint run
+    ```
+    """

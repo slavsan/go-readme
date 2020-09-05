@@ -38,63 +38,77 @@ func (d *doc) ToMarkdown() string {
 	var buf strings.Builder
 
 	if d.Readme.Title != "" {
-		buf.WriteString(fmt.Sprintf("# %s", d.Readme.Title))
+		buf.WriteString(fmt.Sprintf("# %s\n", d.Readme.Title))
 	}
 
 	if d.Readme.Description != "" {
-		buf.WriteString(fmt.Sprintf("%s", d.Readme.Description))
+		buf.WriteString(fmt.Sprintf("\n%s\n", d.Readme.Description))
 	}
 
 	if d.Readme.Install != "" {
-		buf.WriteString(fmt.Sprintf("### Installation\n%s", d.Readme.Install))
+		buf.WriteString(fmt.Sprintf("\n### Installation\n%s", d.Readme.Install))
 	}
 
 	if d.Readme.Usage != "" {
-		buf.WriteString(fmt.Sprintf("### Usage\n%s", d.Readme.Usage))
+		buf.WriteString(fmt.Sprintf("\n### Usage\n%s", d.Readme.Usage))
 	}
 
 	if d.Readme.Setup != nil {
-		buf.WriteString(fmt.Sprintf("### Setup\n\n"))
+		buf.WriteString(fmt.Sprintf("\n### Setup\n\n"))
 
 		if d.Readme.Setup.Clone != "" {
 			buf.WriteString(fmt.Sprintf("#### Clone\n"))
-			buf.WriteString(fmt.Sprintf("%s", d.Readme.Setup.Clone))
+			buf.WriteString(fmt.Sprintf("%s\n", d.Readme.Setup.Clone))
 		}
 
 		if d.Readme.Setup.Build != "" {
 			buf.WriteString(fmt.Sprintf("#### Build\n"))
-			buf.WriteString(fmt.Sprintf("%s", d.Readme.Setup.Build))
+			buf.WriteString(fmt.Sprintf("%s\n", d.Readme.Setup.Build))
 		}
 
 		if d.Readme.Setup.Start != "" {
 			buf.WriteString(fmt.Sprintf("#### Start\n"))
-			buf.WriteString(fmt.Sprintf("%s", d.Readme.Setup.Start))
+			buf.WriteString(fmt.Sprintf("%s\n", d.Readme.Setup.Start))
 		}
 
 		if d.Readme.Setup.Testing != "" {
 			buf.WriteString(fmt.Sprintf("#### Testing\n"))
-			buf.WriteString(fmt.Sprintf("%s", d.Readme.Setup.Testing))
+			buf.WriteString(fmt.Sprintf("%s\n", d.Readme.Setup.Testing))
 		}
 
 		if d.Readme.Setup.Linting != "" {
 			buf.WriteString(fmt.Sprintf("#### Linting\n"))
-			buf.WriteString(fmt.Sprintf("%s", d.Readme.Setup.Linting))
+			buf.WriteString(fmt.Sprintf("%s\n", d.Readme.Setup.Linting))
 		}
 	}
 
 	if d.Readme.Prerequisites != "" {
-		buf.WriteString(fmt.Sprintf("### Prerequisites\n%s", d.Readme.Prerequisites))
+		buf.WriteString(fmt.Sprintf("\n### Prerequisites\n%s", d.Readme.Prerequisites))
 	}
 
 	if d.Readme.License != "" {
-		buf.WriteString(fmt.Sprintf("### License\n%s", d.Readme.License))
+		buf.WriteString(fmt.Sprintf("\n### License\n%s", d.Readme.License))
 	}
 
 	if d.Readme.Author != "" {
-		buf.WriteString(fmt.Sprintf("### Author\n%s", d.Readme.Author))
+		buf.WriteString(fmt.Sprintf("\n### Author\n%s", d.Readme.Author))
 	}
 
-	return buf.String()
+	start := 0
+	end := buf.Len()
+	str := buf.String()
+
+	// Remove '\n' if it's the first character
+	if str[0] == '\n' {
+		start++
+	}
+
+	// Remove '\n' if it's the last character
+	if str[end-1] == '\n' {
+		end--
+	}
+
+	return str[start:end]
 }
 
 // Parse ..

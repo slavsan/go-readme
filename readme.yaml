@@ -11,7 +11,7 @@ readme:
     - name: setup
       enabled: true
   title: go-readme
-  description: A cli utility for creating project READMEs
+  description: A cli app for creating better project READMEs
   badges:
   screenshots:
   project_status:
@@ -39,8 +39,17 @@ readme:
       go run main.go
       ```
     testing: |
+      To run the BDD (Cucumber) tests, execute
       ```
       godog
+      ```
+      If you want to run them with `progress` formatting (shorter), execute
+      ```
+      godog --format=progress
+      ```
+      In order to run a specific feature (test), you'll need to specify the feature file and line, like so
+      ```
+      godog features/generate_markdown_readme.feature:197
       ```
     linting: |
       ```
