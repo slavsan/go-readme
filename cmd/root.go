@@ -22,6 +22,7 @@ to quickly create a Cobra application.`,
 	}
 )
 
+// Execute ..
 func Execute() {
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)
@@ -42,7 +43,8 @@ func init() {
 	// viper.SetDefault("author", "NAME HERE <EMAIL ADDRESS>")
 	// viper.SetDefault("license", "apache")
 
-	rootCmd.AddCommand(addCmd)
+	rootCmd.AddCommand(newCmd)
+	rootCmd.AddCommand(yamlToMdCmd)
 }
 
 func er(msg interface{}) {

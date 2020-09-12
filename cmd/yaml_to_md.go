@@ -7,8 +7,8 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var addCmd = &cobra.Command{
-	Use:   "yaml",
+var yamlToMdCmd = &cobra.Command{
+	Use:   "yaml-to-md",
 	Short: "Generate README.md from readme.yaml",
 	Long:  "Generate README.md from readme.yaml\n",
 	RunE: func(cmd *cobra.Command, args []string) error {

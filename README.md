@@ -5,7 +5,7 @@ A cli app for creating better project READMEs
 ### Usage
 In order to generate a README.md file from a readme.yaml, run
 ```
-go-readme create
+go-readme yaml
 ```
 
 ### Setup

@@ -21,7 +21,7 @@ readme:
   usage: |
     In order to generate a README.md file from a readme.yaml, run
     ```
-    go-readme create
+    go-readme yaml-to-md
     ```
   setup:
     clone: |

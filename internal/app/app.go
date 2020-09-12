@@ -7,6 +7,56 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
+const exampleYaml = `readme:
+  items:
+    - name: title
+      enabled: true
+    - name: description
+      enabled: true
+    - name: license
+      enabled: false
+    - name: author
+      enabled: true
+    - name: setup
+      enabled: true
+  title:
+  description:
+  badges:
+  screenshots:
+  project_status:
+  prerequisites:
+  getting_started:
+  install:
+  usage:
+  setup:
+    clone:
+    git_hooks:
+    deps:
+    dev:
+    build:
+    start:
+    testing:
+    linting:
+    docs:
+    profiling:
+    coverage:
+    static_analysis:
+    swagger:
+    deploy:
+    release:
+  examples:
+  versioning:
+  changelog:
+  contributing:
+  contributors:
+  changelog:
+  releases:
+  contact:
+  author:
+  license:
+  acknowledgements:
+`
+
 // Readme ..
 type Readme struct {
 }
@@ -121,4 +171,9 @@ func (r *Readme) Parse(content string) (string, error) {
 	}
 
 	return d.ToMarkdown(), nil
+}
+
+// ExampleYaml ..
+func (r *Readme) ExampleYaml() string {
+	return exampleYaml
 }
