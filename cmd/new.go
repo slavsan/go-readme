@@ -16,7 +16,7 @@ var newCmd = &cobra.Command{
 
 		exampleYaml := r.ExampleYaml()
 
-		err := ioutil.WriteFile("./README.md", []byte(exampleYaml), 0644)
+		err := ioutil.WriteFile("./readme.yaml", []byte(exampleYaml), 0644)
 		if err != nil {
 			return err
 		}
